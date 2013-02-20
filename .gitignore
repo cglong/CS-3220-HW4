@@ -1,0 +1,9 @@
+db/
+incremental_db/
+output_files/
+
+*_description.txt
+*.bak
+*.jdi
+*.qws
+*.zip
