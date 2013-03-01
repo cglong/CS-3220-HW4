@@ -132,6 +132,11 @@ reg [15:0] Data_Mem[0:`DATA_MEM_SIZE-1];
 				ld_reg=1;
 			end
 			
+			`OP_LDW: begin
+				reg_out = Data_Mem[src1+IR[15:0]];
+				ld_reg=1;
+			end
+			
 		endcase
 	end
 end
