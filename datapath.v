@@ -111,6 +111,12 @@ reg [15:0] Data_Mem[0:`DATA_MEM_SIZE-1];
 					reg_out = src1 + src2;
 				else
 					reg_out = src1 + IR[15:0];
+				
+				/* set CC */
+				if (reg_out < 0)
+					CC = 1;
+				else
+					CC = 4;
 			end
 			
 			`OP_AND: begin
