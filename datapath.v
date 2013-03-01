@@ -137,6 +137,11 @@ reg [15:0] Data_Mem[0:`DATA_MEM_SIZE-1];
 				ld_reg=1;
 			end
 			
+			`OP_STW: begin
+				Data_Mem[src1+IR[15:0]] = REG_INT[dst_id];
+				ld_reg=1;
+			end
+			
 		endcase
 	end
 end
