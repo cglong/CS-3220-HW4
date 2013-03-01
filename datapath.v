@@ -156,7 +156,7 @@ always @(posedge clk) begin
 			end
 			
 			`OP_BR: begin
-				nzp = IR[26] + IR[25] + IR[24];
+				nzp = IR[26:24];
 				
 				case (nzp)
 				
