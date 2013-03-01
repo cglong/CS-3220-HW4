@@ -124,6 +124,14 @@ reg [15:0] Data_Mem[0:`DATA_MEM_SIZE-1];
 				ld_reg=1;
 			end
 			
+			`OP_MOV: begin
+				if (!IR[24])
+					reg_out = src2;
+				else
+					reg_out = IR[15:0];
+				ld_reg=1;
+			end
+			
 		endcase
 	end
 end
