@@ -22,3 +22,6 @@
 `define OP_LDW 5'b00101
 `define OP_STW 5'b00110
 `define OP_BR 5'b11011
+`define OP_JMP 5'b11100
+`define OP_JSRR 5'b11111
+`define OP_JSR 5'b11110
