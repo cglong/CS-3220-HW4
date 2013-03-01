@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/wamp/www/CS-3220-HW4/lg_highlevel.v
+source_file = 1, C:/wamp/www/CS-3220-HW4/datapath.v
+source_file = 1, C:/wamp/www/CS-3220-HW4/global_def.h
+source_file = 1, C:/wamp/www/CS-3220-HW4/pll.qip
+source_file = 1, C:/wamp/www/CS-3220-HW4/pll.v
+source_file = 1, C:/wamp/www/CS-3220-HW4/db/lg_highlevel.cbx.xml
+source_file = 1, C:/wamp/www/CS-3220-HW4/datamem.hex
+source_file = 1, C:/wamp/www/CS-3220-HW4/instructions.hex
+source_file = 1, c:/altera/12.1/quartus/libraries/megafunctions/altpll.tdf
+source_file = 1, c:/altera/12.1/quartus/libraries/megafunctions/aglobal121.inc
+source_file = 1, c:/altera/12.1/quartus/libraries/megafunctions/stratix_pll.inc
+source_file = 1, c:/altera/12.1/quartus/libraries/megafunctions/stratixii_pll.inc
+source_file = 1, c:/altera/12.1/quartus/libraries/megafunctions/cycloneii_pll.inc
+source_file = 1, c:/altera/12.1/quartus/libraries/megafunctions/cbx.lst
+design_name = lg_highlevel
+instance = comp, \CLOCK_50~I , CLOCK_50, lg_highlevel, 1
