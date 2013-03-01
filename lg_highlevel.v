@@ -7,7 +7,7 @@ initial begin
 	myclock = 0;
 	$display("Simulation has begun");
 	#999 $display("Simulation is about to end");
-	#1000 finish;
+	#1000 $finish;
 end
 
 always begin
