@@ -99,14 +99,6 @@ always @(posedge clk) begin
 					reg_out = src1 + src2;
 				else
 					reg_out = src1 + IR[15:0];
-				
-				/* set CC */
-				if (reg_out < 0)
-					CC[2] = 1;
-				else if (reg_out == 0)
-					CC[1] = 1;
-				else
-					CC[0] = 1;
 			end
 			
 			`OP_AND: begin
@@ -114,14 +106,6 @@ always @(posedge clk) begin
 					reg_out = src1 & src2;
 				else
 					reg_out = src1 & IR[15:0];
-				
-				/* set CC */
-				if (reg_out < 0)
-					CC[2] = 1;
-				else if (reg_out == 0)
-					CC[1] = 1;
-				else
-					CC[0] = 1;
 			end
 			
 			`OP_MOV: begin
@@ -129,26 +113,10 @@ always @(posedge clk) begin
 					reg_out = src2;
 				else
 					reg_out = IR[15:0];
-				
-				/* set CC */
-				if (reg_out < 0)
-					CC[2] = 1;
-				else if (reg_out == 0)
-					CC[1] = 1;
-				else
-					CC[0] = 1;
 			end
 			
 			`OP_LDW: begin
 				reg_out = Data_Mem[src1 + IR[15:0] + 1];
-				
-				/* set CC */
-				if (reg_out < 0)
-					CC[2] = 1;
-				else if (reg_out == 0)
-					CC[1] = 1;
-				else
-					CC[0] = 1;
 			end
 			
 			`OP_STW: begin
@@ -214,18 +182,50 @@ always @(negedge clk) begin
 				
 			`OP_ADD: begin
 				ld_reg = 1;
+				
+				/* set CC */
+				if (reg_out < 0)
+					CC[2] = 1;
+				else if (reg_out == 0)
+					CC[1] = 1;
+				else
+					CC[0] = 1;
 			end
 			
 			`OP_AND: begin
 				ld_reg = 1;
+				
+				/* set CC */
+				if (reg_out < 0)
+					CC[2] = 1;
+				else if (reg_out == 0)
+					CC[1] = 1;
+				else
+					CC[0] = 1;
 			end
 			
 			`OP_MOV: begin
 				ld_reg = 1;
+				
+				/* set CC */
+				if (reg_out < 0)
+					CC[2] = 1;
+				else if (reg_out == 0)
+					CC[1] = 1;
+				else
+					CC[0] = 1;
 			end
 			
 			`OP_LDW: begin
 				ld_reg = 1;
+				
+				/* set CC */
+				if (reg_out < 0)
+					CC[2] = 1;
+				else if (reg_out == 0)
+					CC[1] = 1;
+				else
+					CC[0] = 1;
 			end
 			
 			`OP_BR: begin
