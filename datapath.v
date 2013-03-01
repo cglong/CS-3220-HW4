@@ -78,7 +78,7 @@ always @(posedge clk) begin
 		Inst_data = INST_Mem[pc_addr];
 		IR = Inst_data; 
 
-		Next_PC = PC+4;
+		Next_PC = PC + 4;
 			
 		/* decode stage */
 		/* read source values */ 
@@ -156,7 +156,7 @@ always @(posedge clk) begin
 			end
 			
 			`OP_BR: begin
-				nzp = IR[26:24];
+				nzp = IR[26] << 2 + IR[25] << 1 + IR[24];
 				
 				case (nzp)
 				
@@ -213,7 +213,7 @@ always @(negedge clk) begin
 		case(IR[31:27]) 
 				
 			`OP_ADD: begin
-				ld_reg = 1;		
+				ld_reg = 1;
 			end
 			
 			`OP_AND: begin
