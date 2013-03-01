@@ -17,6 +17,7 @@
 `define OPCODE_WIDTH 8
 
 `define OP_ADD 5'b00000
+`define OP_AND 5'b00001
 `define OP_BR 5'b11011
 `define OP_LDW 5'b00101
 `define OP_STW 5'b00110
