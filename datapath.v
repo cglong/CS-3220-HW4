@@ -109,7 +109,10 @@ reg [15:0] Data_Mem[0:`DATA_MEM_SIZE-1];
 		case(IR[31:27]) 
 				
 			`OP_ADD: begin
-				reg_out = src1 + src2; 
+				if (IR[24])
+					reg_out = src1 + src2; 
+				else
+					reg_out = src1 + IR[15:0];
 				ld_reg=1; 
 			end
 			/* need to complete other instructions */
