@@ -102,9 +102,11 @@ always @(posedge clk) begin
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC = 1;
+					CC[0] = 1;
+				else if (reg_out == 0)
+					CC[1] = 1;
 				else
-					CC = 4;
+					CC[2] = 1;
 			end
 			
 			`OP_AND: begin
