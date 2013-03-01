@@ -102,11 +102,11 @@ always @(posedge clk) begin
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[0] = 1;
+					CC[2] = 1;
 				else if (reg_out == 0)
 					CC[1] = 1;
 				else
-					CC[2] = 1;
+					CC[0] = 1;
 			end
 			
 			`OP_AND: begin
@@ -117,11 +117,11 @@ always @(posedge clk) begin
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[0] = 1;
+					CC[2] = 1;
 				else if (reg_out == 0)
 					CC[1] = 1;
 				else
-					CC[2] = 1;
+					CC[0] = 1;
 			end
 			
 			`OP_MOV: begin
@@ -132,11 +132,11 @@ always @(posedge clk) begin
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[0] = 1;
+					CC[2] = 1;
 				else if (reg_out == 0)
 					CC[1] = 1;
 				else
-					CC[2] = 1;
+					CC[0] = 1;
 			end
 			
 			`OP_LDW: begin
@@ -144,11 +144,11 @@ always @(posedge clk) begin
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[0] = 1;
+					CC[2] = 1;
 				else if (reg_out == 0)
 					CC[1] = 1;
 				else
-					CC[2] = 1;
+					CC[0] = 1;
 			end
 			
 			`OP_STW: begin
@@ -156,14 +156,14 @@ always @(posedge clk) begin
 			end
 			
 			`OP_BR: begin
-				nzp = IR[26] << 2 + IR[25] << 1 + IR[24];
+				nzp = IR[26:24];
 				
 				case (nzp)
 				
 					/* Brnzp */
 					7: IR_branch = 1;  
 					
-					/* Brzp */
+					/* Brnz */
 					6: begin
 						if (CC != 1)
 							IR_branch = 1;
@@ -175,13 +175,13 @@ always @(posedge clk) begin
 							IR_branch = 1;
 					end
 					
-					/* Brp */
+					/* Brn */
 					4: begin
 						if (CC == 4)
 							IR_branch = 1;
 					end
 					
-					/* Brnz */
+					/* Brzp */
 					3: begin
 						if (CC != 4)
 							IR_branch = 1;
@@ -193,7 +193,7 @@ always @(posedge clk) begin
 							IR_branch = 1;
 					end
 					
-					/* Brn */
+					/* Brp */
 					1: begin
 						if (CC == 1)
 							IR_branch = 1;
