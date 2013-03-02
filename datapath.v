@@ -77,7 +77,7 @@ always @(posedge clk) begin
 				
 		Inst_data = INST_Mem[pc_addr];
 		IR = Inst_data; 
-
+		
 		Next_PC = PC + 4;
 			
 		/* decode stage */
@@ -85,8 +85,7 @@ always @(posedge clk) begin
 		
 		src1_id = IR[19:16];
 		src2_id = IR[11:8];
-		dst_id = IR[23:20];
-		
+		dst_id = IR[23:20];		
 		
 		src1 = REG_INT[src1_id];
 		src2 = REG_INT[src2_id];
@@ -133,38 +132,38 @@ always @(posedge clk) begin
 					
 					/* Brnz */
 					6: begin
-						if (CC != 1)
-							IR_branch = 1;
+						if (CC != 1) IR_branch = 1;
+						else IR_branch = 0;
 					end
 					
 					/* Brnp */
 					5: begin
-						if (CC != 2)
-							IR_branch = 1;
+						if (CC != 2) IR_branch = 1;
+						else IR_branch = 0;
 					end
 					
 					/* Brn */
 					4: begin
-						if (CC == 4)
-							IR_branch = 1;
+						if (CC == 4) IR_branch = 1;
+						else IR_branch = 0;
 					end
 					
 					/* Brzp */
 					3: begin
-						if (CC != 4)
-							IR_branch = 1;
+						if (CC != 4) IR_branch = 1;
+						else IR_branch = 0;
 					end
 					
 					/* Brz */
 					2: begin
-						if (CC == 2)
-							IR_branch = 1;
+						if (CC == 2) IR_branch = 1;
+						else IR_branch = 0;
 					end
 					
 					/* Brp */
 					1: begin
-						if (CC == 1)
-							IR_branch = 1;
+						if (CC == 1) IR_branch = 1;
+						else IR_branch = 0;
 					end	
 				endcase
 			end		
@@ -181,56 +180,56 @@ always @(negedge clk) begin
 		case(IR[31:27]) 
 				
 			`OP_ADD: begin
-				ld_reg = 1;
+				REG_INT[dst_id] = reg_out;
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[2] = 1;
+					CC[2:0] = 4;
 				else if (reg_out == 0)
-					CC[1] = 1;
+					CC[2:0] = 2;
 				else
-					CC[0] = 1;
+					CC[2:0] = 1;
 			end
 			
 			`OP_AND: begin
-				ld_reg = 1;
+				REG_INT[dst_id] = reg_out;
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[2] = 1;
+					CC[2:0] = 4;
 				else if (reg_out == 0)
-					CC[1] = 1;
+					CC[2:0] = 2;
 				else
-					CC[0] = 1;
+					CC[2:0] = 1;
 			end
 			
 			`OP_MOV: begin
-				ld_reg = 1;
+				REG_INT[src1_id] = reg_out;
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[2] = 1;
+					CC[2:0] = 4;
 				else if (reg_out == 0)
-					CC[1] = 1;
+					CC[2:0] = 2;
 				else
-					CC[0] = 1;
+					CC[2:0] = 1;
 			end
 			
 			`OP_LDW: begin
-				ld_reg = 1;
+				REG_INT[dst_id] = reg_out;
 				
 				/* set CC */
 				if (reg_out < 0)
-					CC[2] = 1;
+					CC[2:0] = 4;
 				else if (reg_out == 0)
-					CC[1] = 1;
+					CC[2:0] = 2;
 				else
-					CC[0] = 1;
+					CC[2:0] = 1;
 			end
 			
 			`OP_BR: begin
-				if (IR_branch) 
-					Next_PC = PC + IR[15:0] << 2;
+				if (IR_branch == 1) 
+					Next_PC = Next_PC + (IR[15:0] << 2);
 			end
 			
 			`OP_JMP: begin
@@ -244,7 +243,7 @@ always @(negedge clk) begin
 			
 			`OP_JSR: begin
 				REG_INT[7] = PC;
-				Next_PC = PC + IR[15:0] << 2;
+				Next_PC = Next_PC + IR[15:0] << 2;
 			end
 			
 		endcase

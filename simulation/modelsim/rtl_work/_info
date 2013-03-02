@@ -1,0 +1,65 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\wamp\www\CS-3220-HW4\simulation\modelsim
+vdatapath
+IdM;cg5XJ?:cjG=5hYC0b30
+VUcD3GRebZOhMh;SLbmMPi3
+Z1 dC:\wamp\www\CS-3220-HW4\simulation\modelsim
+w1362257599
+8C:/wamp/www/CS-3220-HW4/datapath.v
+FC:/wamp/www/CS-3220-HW4/datapath.v
+L0 4
+Z2 OV;L;10.1b;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/wamp/www/CS-3220-HW4 -O0
+!i10b 1
+!s100 HKfOaaPSm3dXconnfL3dz3
+!s85 0
+!s108 1362259118.056000
+!s107 C:/wamp/www/CS-3220-HW4/global_def.h|C:/wamp/www/CS-3220-HW4/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/wamp/www/CS-3220-HW4|C:/wamp/www/CS-3220-HW4/datapath.v|
+!s101 -O0
+vlg_highlevel
+!i10b 1
+!s100 7kbkczKG>S`SzE7@YZQ610
+IJOdb9^CGnA^7zWadbeL<P1
+Vf_?fD6CfhKU0IbTRU;j]n1
+R1
+w1362165159
+8C:/wamp/www/CS-3220-HW4/lg_highlevel.v
+FC:/wamp/www/CS-3220-HW4/lg_highlevel.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1362259118.398000
+!s107 C:/wamp/www/CS-3220-HW4/lg_highlevel.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/wamp/www/CS-3220-HW4|C:/wamp/www/CS-3220-HW4/lg_highlevel.v|
+!s101 -O0
+R3
+R4
+vpll
+IVK;AXKENl`iM<Zc[Y>1]h1
+V[PnaR_FLzVi3KU;W^`bE_1
+R1
+w1361917522
+8C:/wamp/www/CS-3220-HW4/pll.v
+FC:/wamp/www/CS-3220-HW4/pll.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 4Q`2P=D[GY`llomC6ogLA3
+!s85 0
+!s108 1362259117.764000
+!s107 C:/wamp/www/CS-3220-HW4/pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/wamp/www/CS-3220-HW4|C:/wamp/www/CS-3220-HW4/pll.v|
+!s101 -O0
