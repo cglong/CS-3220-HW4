@@ -55,10 +55,10 @@
 # 
 #           File in use by: Lee  Hostname: LEE-PC  ProcessID: 2848
 # 
-#           Attempting to use alternate WLF file "./wlftkyez75".
+#           Attempting to use alternate WLF file "./wlftvq7rwg".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftkyez75
+#           Using alternate file: ./wlftvq7rwg
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct

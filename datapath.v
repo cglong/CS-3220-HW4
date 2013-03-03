@@ -238,12 +238,12 @@ always @(negedge clk) begin
 			
 			`OP_JSRR: begin
 				REG_INT[7] = PC;
-				Next_PC = PC + src1;
+				Next_PC = Next_PC + src1;
 			end
 			
 			`OP_JSR: begin
 				REG_INT[7] = PC;
-				Next_PC = Next_PC + IR[15:0] << 2;
+				Next_PC = Next_PC + (IR[15:0] << 2);
 			end
 			
 		endcase
