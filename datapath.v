@@ -168,6 +168,7 @@ always @(posedge clk) begin
 				endcase
 			end		
 		endcase
+	
 	end
 end
 	
@@ -238,7 +239,7 @@ always @(negedge clk) begin
 			
 			`OP_JSRR: begin
 				REG_INT[7] = PC;
-				Next_PC = Next_PC + src1;
+				Next_PC = src1;
 			end
 			
 			`OP_JSR: begin
@@ -249,6 +250,7 @@ always @(negedge clk) begin
 		endcase
 	end
 end
+
 
 endmodule
 

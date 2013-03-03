@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
-module lg_highlevel();
+module lg_highlevel(CLOCK_50);
+input CLOCK_50;
 reg myclock;
 
 initial begin 

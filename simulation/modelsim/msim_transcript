@@ -55,10 +55,10 @@
 # 
 #           File in use by: Lee  Hostname: LEE-PC  ProcessID: 2848
 # 
-#           Attempting to use alternate WLF file "./wlftvq7rwg".
+#           Attempting to use alternate WLF file "./wlftg3c70k".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftvq7rwg
+#           Using alternate file: ./wlftg3c70k
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -71,10 +71,5 @@
 #  Note : Cyclone II PLL locked to incoming clock
 # Time: 220000  Instance: lg_highlevel.pll_inst.altpll_component.stratixii_pll.pll1
 # Simulation is about to end
-# ** Note: $finish    : C:/wamp/www/CS-3220-HW4/lg_highlevel.v(10)
+# ** Note: $finish    : C:/wamp/www/CS-3220-HW4/lg_highlevel.v(12)
 #    Time: 1999 ns  Iteration: 0  Instance: /lg_highlevel
-# 1
-# Break in Module lg_highlevel at C:/wamp/www/CS-3220-HW4/lg_highlevel.v line 10
-# Simulation Breakpoint: 1
-# Break in Module lg_highlevel at C:/wamp/www/CS-3220-HW4/lg_highlevel.v line 10
-# MACRO ./lg_highlevel_run_msim_rtl_verilog.do PAUSED at line 19
